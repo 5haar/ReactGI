@@ -1,25 +1,58 @@
-import logo from './logo.svg';
 import './App.css';
+import Veryeasy from './components/veryeasy.jsx';
+import BasicInfo from './components/basicinfo';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// All steps complete. Medium is in BasicInfo.jsx, Hard is in here (App.js)
+
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      employees: [
+        {
+          name: 'Shaar',
+          company: 'E. Corp',
+          position: 'Analyst'
+        },
+        {
+          name: 'Elliot Alderson',
+          company: 'E. Corp',
+          position: 'Software Engineer'
+        },
+        {
+          name: 'Mr. Robot',
+          company: 'None',
+          position: '...'
+        },
+        {
+          name: 'Krista',
+          company: 'NYC Therapist Union',
+          position: 'Behavorial Therapist'
+        },
+        {
+          name: 'White Rose',
+          company: 'Dark Army',
+          position: 'Leader'
+        }
+      ]
+    }
+  }
+  render() {
+
+    return (
+      <div className="App">
+        <section class="header">
+        
+        </section>
+        {/* <Veryeasy /> */}
+        {/* <BasicInfo /> */}
+        {this.state.employees.map(employeeInfo =>{
+          return <BasicInfo name={employeeInfo.name} company={employeeInfo.company} position={employeeInfo.position}/>
+        })}
+      </div>
+    );
+  }
 }
 
 export default App;
