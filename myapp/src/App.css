@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  background-color: black;
+}
+
+.header {
+  background-image: url(./ecorp.gif);
+  background-position: center;
+  background-size: 75%;
+  height: 50vh;
+  width: 100%;
+}
